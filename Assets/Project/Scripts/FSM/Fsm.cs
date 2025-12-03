@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Scripts;
 
-namespace Project.FSM
-{
     public class Fsm
     {
         public FsmStateBase CurrentState;
@@ -38,4 +37,3 @@ namespace Project.FSM
             CurrentState?.Update();
         }
     }
-}

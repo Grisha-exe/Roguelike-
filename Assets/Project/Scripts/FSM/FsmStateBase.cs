@@ -1,4 +1,4 @@
-﻿namespace Project.FSM
+﻿namespace Scripts
 {
     public abstract class FsmStateBase
     {
