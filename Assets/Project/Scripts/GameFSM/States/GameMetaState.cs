@@ -1,12 +1,10 @@
 ﻿namespace Project.States
 {
-    public class GameMetaState
+    public class GameMetaState : FsmStateBase
     {
-        public class GameCoreState : FsmStateBase
-        {
             private  readonly Meta _meta;
         
-            public GameCoreState(Fsm fsm, Meta meta) : base(fsm)
+            public GameMetaState(Fsm fsm, Meta meta) : base(fsm)
             {
                 _meta = meta;
             }
@@ -17,4 +15,3 @@
             }
         }
     }
-}
