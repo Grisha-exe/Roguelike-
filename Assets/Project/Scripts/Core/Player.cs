@@ -1,6 +1,8 @@
-﻿namespace Project
+﻿using UnityEngine;
+
+namespace Project
 {
-    public class Player
+    public class Player : MonoBehaviour
     {
         private int _health;
         private int _coins;
