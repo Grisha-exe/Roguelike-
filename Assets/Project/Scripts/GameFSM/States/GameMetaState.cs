@@ -1,6 +1,4 @@
-﻿using Project.Meta;
-
-namespace Scripts.States
+﻿namespace Project.States
 {
     public class GameMetaState
     {

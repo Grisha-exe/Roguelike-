@@ -1,4 +1,4 @@
-﻿namespace Project.Core
+﻿namespace Project
 {
     public class Player
     {

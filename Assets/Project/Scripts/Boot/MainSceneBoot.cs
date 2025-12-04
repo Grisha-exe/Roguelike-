@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Project.Boot
+namespace Project
 {
     public class MainSceneBoot : MonoBehaviour
     {

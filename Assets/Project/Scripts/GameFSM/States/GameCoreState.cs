@@ -1,6 +1,4 @@
-﻿using Project.Core;
-
-namespace Scripts.States
+﻿namespace Project.States
 {
     public class GameCoreState : FsmStateBase
     {

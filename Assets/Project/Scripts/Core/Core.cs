@@ -1,4 +1,4 @@
-﻿namespace Project.Core
+﻿namespace Project
 {
     public class Core
     {
@@ -10,5 +10,7 @@
             _isAcualGameState = true;
             _isPossibleInteract = true;
         }
+
+        
     }
 }

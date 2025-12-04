@@ -1,4 +1,4 @@
-﻿namespace Project.Main
+﻿namespace Project
 {
     public class Main
     {

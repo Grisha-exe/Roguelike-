@@ -1,4 +1,4 @@
-﻿namespace Project.Meta
+﻿namespace Project
 {
     public class Meta
     {
