@@ -24,7 +24,6 @@ namespace Project
         public void SetMetaState()
         {
             _gameFsm.SetState<GameMetaState>();
-            Debug.Log("Game Meta State");
         }
 
         public void SetCoreState()

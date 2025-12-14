@@ -1,4 +1,6 @@
-﻿namespace Project
+﻿using UnityEngine;
+
+namespace Project
 {
     public class Meta
     {
@@ -9,6 +11,7 @@
         {
             _isAcualGameState = true;
             _isPossibleInteract = true;
+            
         }
     }
 }
