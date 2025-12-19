@@ -6,7 +6,7 @@ namespace Project
 {
     public class Player : MonoBehaviour
     {
-        private readonly InputSystem_Actions _inputSystem = new();
+        private readonly InputSystem_Actions _inputSystem;
         private Vector2 _moveInput;
         private Vector2 _shootInput;
         

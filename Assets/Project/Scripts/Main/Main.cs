@@ -18,7 +18,7 @@ namespace Project
             _gameFsm.AddState(new GameCoreState(_gameFsm, _core));
             _gameFsm.AddState(new GameMetaState(_gameFsm, _meta));
             
-            SetMetaState();
+            SetCoreState();
         }
 
         public void SetMetaState()
