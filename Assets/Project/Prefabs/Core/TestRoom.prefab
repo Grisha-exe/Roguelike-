@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7885922937857350771}
   - component: {fileID: 117882016019788088}
   - component: {fileID: 6112798710555382736}
+  - component: {fileID: -3361465600546959373}
   m_Layer: 0
   m_Name: TestRoom
   m_TagString: Untagged
@@ -307,3 +308,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.6264453, y: 0.4984703}
   m_EdgeRadius: 0
+--- !u!114 &-3361465600546959373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927588226351573771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30f56c49bdc475dbd195a19d4cb3644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
