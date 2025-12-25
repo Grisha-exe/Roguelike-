@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3208b32b3644168b5e12ebbe321752, type: 3}
   m_Name: RoomConfig
   m_EditorClassIdentifier: 
-  roomPrefab: {fileID: 0}
+  roomPrefab: {fileID: 8927588226351573771, guid: 49aa7216e5f6d9f4297bf3b8c9a2224c, type: 3}
   difficulty: 0
   weight: 1
   doorUp: 0

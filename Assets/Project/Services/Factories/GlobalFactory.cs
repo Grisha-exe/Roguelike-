@@ -8,9 +8,9 @@ namespace Project.Services.Factories
     {
         [Inject] private IUIManager _uiManager;
 
-        private GameObject _room;
         private GameObject _coreContainer;
         private GameObject _metaContainer;
+        private GameObject _roomManagerContainer;
 
         public void Initialize()
         {
@@ -29,10 +29,10 @@ namespace Project.Services.Factories
             return _metaContainer;
         }
 
-        public GameObject CreateRoom()
+        public GameObject CreateRoomManagerContainer()
         {
-            _room = new GameObject("Room");
-            return _room;
+            _roomManagerContainer = new GameObject("RoomManagerContainer");
+            return _roomManagerContainer; 
         }
     }
 }

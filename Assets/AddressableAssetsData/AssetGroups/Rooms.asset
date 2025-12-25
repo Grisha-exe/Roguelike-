@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Rooms
+  m_EditorClassIdentifier: 
+  m_GroupName: Rooms
+  m_GUID: f12e09dfb2e68f24b81eb822021ffd66
+  m_SerializeEntries:
+  - m_GUID: 49aa7216e5f6d9f4297bf3b8c9a2224c
+    m_Address: TestRoom
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 056877419abb33a4199e6a3550f5e7bc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 631f2d269f20c924a94026b7df83823c, type: 2}
+    - {fileID: 11400000, guid: 9bd1f3053d596204db419d3e4e1acd79, type: 2}

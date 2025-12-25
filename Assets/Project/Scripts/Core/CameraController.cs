@@ -1,23 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Zenject;
 
 namespace Project
 {
     public class CameraController : MonoBehaviour
     {
+        [Inject] RoomManager _roomManager;
+        
         public static CameraController Instance;
 
-        public int CameraZoomOut = -10; 
 
         private void Awake()
         {
             Instance = this;
+
+            _roomManager.OnRoomCreated += SetRoom;
         }
 
         public void SetRoom(Room room)
         {
-            Vector3 camPos = room.transform.position;
-            camPos.z = CameraZoomOut;
-            transform.position = camPos;
+            
         }
     }
 }

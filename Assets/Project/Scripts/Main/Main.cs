@@ -10,7 +10,7 @@ namespace Project
         [Inject] private Core _core;
         [Inject] private Meta _meta;
         [Inject] private GlobalFactory _globalFactory;
-
+        
         private Fsm _gameFsm = new();
 
         public void Initialize()
