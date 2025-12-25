@@ -6,6 +6,8 @@ namespace Project
 {
     public class Core
     {
+        public static Core Instance;
+        
         [Inject] private GlobalFactory _globalFactory;
         private bool _isAcualGameState;
         private bool _isPossibleInteract;

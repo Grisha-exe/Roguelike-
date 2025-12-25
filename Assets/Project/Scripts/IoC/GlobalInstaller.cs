@@ -25,6 +25,9 @@ namespace Project
             Container
                 .Bind<Main>()
                 .AsSingle();
+            Container 
+                .Bind<CameraController>()
+                .AsSingle();
         }
     }
 }
