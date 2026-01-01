@@ -15,6 +15,7 @@ namespace Project
         private bool _isPossibleInteract;
 
         private GameObject _coreContainer;
+        private GameObject _playerContainer;
 
 
         public void Initialize()
@@ -24,7 +25,8 @@ namespace Project
             _isAcualGameState = true;
             _isPossibleInteract = true;
 
-            _coreContainer = _globalFactory.CreateCoreContainer();
+            _globalFactory.CreateCoreContainer();
+            _globalFactory.CreatePlayerManager();
             _roomManager.Initialize();
         }
         
