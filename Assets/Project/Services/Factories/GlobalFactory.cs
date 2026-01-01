@@ -11,18 +11,14 @@ namespace Project.Services.Factories
         private GameObject _coreContainer;
         private GameObject _metaContainer;
         private GameObject _roomManagerContainer;
-        private GameObject _playerContainer;
+        private Player _playerContainer;
 
         public void Initialize()
         {
             
         }
 
-        public GameObject CreatePlayerManager()
-        {
-            _playerContainer = new GameObject("Player");
-            return _playerContainer;
-        }
+        
         
         public GameObject CreateCoreContainer()
         {
