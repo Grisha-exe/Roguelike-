@@ -3,19 +3,22 @@ using UnityEngine;
 
 namespace Project
 {
-    public class PlayerInput : IGetDirection
+    public class PlayerInput : MonoBehaviour, IGetDirection
     {
         private readonly InputSystem_Actions _inputSystem;
-        
+
         private Vector2 _moveDirection;
         private Vector2 _shootDirection;
-        
+
+        private void Update()
+        {
+            GetMoveDirection(_moveDirection);
+            GetShootDirevtion(_shootDirection);
+        }
+
         private void OnEnable()
         {
             _inputSystem.Enable();
-
-            GetMoveDirection(_moveDirection);
-            GetShootDirevtion(_shootDirection);
         }
 
         private void OnDisable()
