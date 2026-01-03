@@ -7,12 +7,13 @@ namespace Project
 {
     public class Player : MonoBehaviour, IMovable
     {
+        private const float Acceleration = 6.5f;
+        private const float Deceleration = 6f;
+        
         [Inject] private PlayerInput _playerInput;
         
-        public float MaxSpeed = 5f;
-        public float Acceleration = 20f;
-        public float Deceleration = 15f;
-
+        public float MaxSpeed = 2f;
+// 10,11,15 строчку перенести в playerstats потом.
         private Rigidbody2D _rigidbody;
         private Vector2 _velocity;
         
