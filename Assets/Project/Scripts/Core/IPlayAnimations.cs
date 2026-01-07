@@ -4,8 +4,8 @@ namespace Project
 {
     public interface IPlayAnimations
     {
-        public void Play(string animationName);
+        public void PlayAnimation(string VerticalAnimation, string HorizontalAnimation);
         
-        public void Pause();
+        public void IdleAnimation();
     }
 }
