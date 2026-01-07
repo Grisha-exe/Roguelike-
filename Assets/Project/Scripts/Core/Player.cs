@@ -45,6 +45,7 @@ namespace Project
             if (_playerInput.MoveDirection != Vector2.zero)
             {
                 if (_playerInput.MoveDirection.x > 0)
+                if (_playerInput.MoveDirection.x > 0)
                 {
                     Play(_horizontalAnimationName);
                 }
