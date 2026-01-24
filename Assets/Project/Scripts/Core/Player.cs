@@ -1,24 +1,18 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
 namespace Project
 {
-    public class Player : MonoBehaviour, IMovable
+    public class Player : MonoBehaviour
     {
-        private const float Acceleration = 6.5f;
-        private const float Deceleration = 6f;
+        [Inject] private PlayerController _playerController;
 
-        [Inject] private PlayerInput _playerInput;
-
-        public float MaxSpeed = 2f;
-
-// 10,11,15 строчку перенести в playerstats потом.
-        private Rigidbody2D _rigidbody;
+        public Rigidbody2D Rigidbody;
         private Animator _animator;
-        private Vector2 _velocity;
         /*
         private SpriteRenderer _spriteRenderer;
         */
@@ -32,31 +26,16 @@ namespace Project
             /*
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             */
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _rigidbody.linearDamping = 0;
+            Rigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody.linearDamping = 0;
         }
 
         public void Update()
         {
-            Move();
+            _playerController.Move();
         }
 
-        public void Move()
-        {
-            Vector2 targetVelocity = _playerInput.MoveDirection * MaxSpeed;
-            _velocity = Vector2.MoveTowards(_rigidbody.linearVelocity,
-                targetVelocity, Acceleration * Time.deltaTime);
-            /*
-            PlayAnimation(_verticalAnimationName, _horizontalAnimationName);
-            */
-
-            _rigidbody.linearVelocity = _velocity;
-
-            /*if (_playerInput.MoveDirection == Vector2.zero)
-            {
-                IdleAnimation();
-            }*/
-        }
+        
 
         /*public void PlayAnimation(string VerticalAnimation, string HorizontalAnimation)
         {

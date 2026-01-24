@@ -8,6 +8,7 @@ namespace Project
         [SerializeField] private Player _player;
         [SerializeField] private PlayerInput _playerInput;
         [SerializeField] private PlayerStats _playerStats;
+        [SerializeField] private PlayerController _playerController;
 
         public override void InstallBindings()
         {
@@ -19,6 +20,11 @@ namespace Project
             Container
                 .Bind<PlayerStats>()
                 .FromInstance(_playerStats)
+                .AsSingle();
+            
+            Container
+                .Bind<PlayerController>()
+                .FromInstance(_playerController)
                 .AsSingle();
         }
     }
