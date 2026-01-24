@@ -46,6 +46,14 @@ namespace Project
             Container
                 .Bind<PlayerInput>()
                 .AsSingle();
+            
+            Container
+                .Bind<PlayerController>()
+                .AsSingle();
+
+            Container
+                .Bind<PlayerStats>()
+                .AsSingle();
         }
     }
 }

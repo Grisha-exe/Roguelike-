@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Project
 {
-    public class PlayerController : MonoBehaviour, IMovable
+    public class PlayerController : IMovable
     {
         [Inject] private PlayerInput _playerInput;
         [Inject] private PlayerStats _playerStats;
@@ -13,29 +13,14 @@ namespace Project
         private const float Deceleration = 6f;
         
         private Vector2 _velocity;
-
-        public void Update()
-        {
-            
-        }
-
         
-
         public void Move()
         {
             Vector2 targetVelocity = _playerInput.MoveDirection * _playerStats.MaxSpeed;
             _velocity = Vector2.MoveTowards(_player.Rigidbody.linearVelocity,
                 targetVelocity, Acceleration * Time.deltaTime);
-            /*
-            PlayAnimation(_verticalAnimationName, _horizontalAnimationName);
-            */
 
             _player.Rigidbody.linearVelocity = _velocity;
-
-            /*if (_playerInput.MoveDirection == Vector2.zero)
-            {
-                IdleAnimation();
-            }*/
         }
 
         public void Shoot()
