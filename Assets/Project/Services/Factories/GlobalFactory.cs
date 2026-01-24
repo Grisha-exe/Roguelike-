@@ -11,7 +11,6 @@ namespace Project.Services.Factories
         private GameObject _coreContainer;
         private GameObject _metaContainer;
         private GameObject _roomManagerContainer;
-        private Player _playerContainer;
 
         public void Initialize()
         {

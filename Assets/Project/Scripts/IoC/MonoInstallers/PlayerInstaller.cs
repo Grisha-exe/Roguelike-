@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Project
 {
-    public class PlayerInstaller : MonoInstaller
+    public class PlayerInstaller : MonoInstaller<PlayerInstaller>
     {
         [SerializeField] private Player _player;
         [SerializeField] private PlayerInput _playerInput;
@@ -25,6 +25,11 @@ namespace Project
             Container
                 .Bind<PlayerController>()
                 .FromInstance(_playerController)
+                .AsSingle();
+            
+            Container
+                .Bind<PlayerInput>()
+                .FromInstance(_playerInput)
                 .AsSingle();
         }
     }
