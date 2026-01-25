@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Project.Services.Enums;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ namespace Project
     {
         [Inject] private PlayerController _playerController;
         [Inject] private PlayerStats _playerStats;
-
+        
         public Rigidbody2D Rigidbody;
         
         private BoxCollider2D _boxCollider;
@@ -32,12 +33,31 @@ namespace Project
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-                if (other.CompareTag("Pickup"))
+                if (!other.CompareTag("PickUp"))
                 {
-                    var otherName = other.gameObject.name;
-                    
-                    Destroy(other.gameObject);
+                    return;
                 }
+                
+                var pickup = other.GetComponent<PickUp>();
+                
+                if (pickup == null) return;
+
+                switch (pickup.Type)
+                {
+                    case PickUpType.Coin:
+                        _playerStats.Coins++;
+                        break;
+
+                    case PickUpType.Key:
+                        _playerStats.Keys++;
+                        break;
+
+                    case PickUpType.Bomb:
+                        _playerStats.Bombs++;
+                        break;
+                }
+
+                Destroy(other.gameObject);
         }
         
     }
