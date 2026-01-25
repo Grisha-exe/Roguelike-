@@ -16,8 +16,8 @@ namespace Project
 
         private GameObject _coreContainer;
         private GameObject _playerContainer;
-        
 
+        private GameObject _coin;
 
         public void Initialize()
         {
@@ -28,6 +28,11 @@ namespace Project
             
             _globalFactory.CreateCoreContainer();
             _roomManager.Initialize();
+        }
+
+        public void SpawnPickUp()
+        {
+            
         }
         
         
