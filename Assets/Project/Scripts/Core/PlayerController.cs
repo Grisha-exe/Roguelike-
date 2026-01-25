@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Zenject;
 
 namespace Project
@@ -8,11 +10,14 @@ namespace Project
         [Inject] private PlayerInput _playerInput;
         [Inject] private PlayerStats _playerStats;
         [Inject] private Player _player;
+
+        [SerializeField] private GameObject _bombPrefab;
         
         private const  float Acceleration = 6.5f;
         private const float Deceleration = 6f;
         
         private Vector2 _velocity;
+        private PickUp _pickUp;
         
         public void Move()
         {
@@ -28,9 +33,16 @@ namespace Project
             
         }
 
-        public void UseBomb()
+        public async void UseBomb()
         {
+            if (_playerStats.Bombs == 0)
+            {
+                return;
+            }
+
+            _bombPrefab = await Addressables.LoadAssetAsync<GameObject>("BombPrefab");
             
+            _pickUp = Object.Instantiate(_bombPrefab, _player.Transform.position, Quaternion.identity).GetComponent<PickUp>();
         }
 
         public void UseActiveItem()

@@ -14,6 +14,7 @@ namespace Project
         [Inject] private PlayerStats _playerStats;
         
         public Rigidbody2D Rigidbody;
+        public Transform Transform;
         
         private BoxCollider2D _boxCollider;
         private string _verticalAnimationName;
@@ -23,6 +24,7 @@ namespace Project
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             Rigidbody.linearDamping = 0;
+            Transform = GetComponent<Transform>();
             _boxCollider = GetComponent<BoxCollider2D>();
         }
 
