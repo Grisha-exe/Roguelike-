@@ -32,11 +32,13 @@ namespace Project
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-                if (other.name == "Coin")
+                if (other.CompareTag("Pickup"))
                 {
-                    _playerStats.Coins++;
+                    var otherName = other.gameObject.name;
+                    
                     Destroy(other.gameObject);
                 }
         }
+        
     }
 }
