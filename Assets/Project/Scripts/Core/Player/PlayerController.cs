@@ -1,7 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
+
 
 namespace Project
 {
@@ -12,12 +14,15 @@ namespace Project
         [Inject] private Player _player;
 
         [SerializeField] private GameObject _bombPrefab;
+        [SerializeField] private GameObject _tearPrefab;
         
         private const  float Acceleration = 6.5f;
         private const float Deceleration = 6f;
         
         private Vector2 _velocity;
         private PickUp _pickUp;
+        private Tear _tear;
+
         
         public void Move()
         {
@@ -28,9 +33,18 @@ namespace Project
             _player.Rigidbody.linearVelocity = _velocity;
         }
 
-        public void Shoot()
+        public async void Shoot()
         {
+            Vector2 targetDirection = _playerInput.ShootDirection;
             
+            _tearPrefab = await Addressables.LoadAssetAsync<GameObject>("PlayerTear");
+            
+            if (targetDirection != Vector2.zero)
+            {
+                Object.Instantiate(_tearPrefab, _player.Transform.position, Quaternion.identity);
+
+                _tearPrefab.transform.DOMove(targetDirection, _playerStats.Range);
+            }
         }
 
         public async void UseBomb()

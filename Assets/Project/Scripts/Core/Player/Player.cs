@@ -13,12 +13,13 @@ namespace Project
         [Inject] private PlayerController _playerController;
         [Inject] private PlayerStats _playerStats;
         
-        public Rigidbody2D Rigidbody;
+        public Rigidbody2D Rigidbody; 
         public Transform Transform;
         
         private BoxCollider2D _boxCollider;
         private string _verticalAnimationName;
         private string _horizontalAnimationName;
+        
 
         public void Awake()
         {
@@ -31,6 +32,7 @@ namespace Project
         public void Update()
         {
             _playerController.Move();
+            _playerController.Shoot();
         }
 
         public void OnTriggerEnter2D(Collider2D other)

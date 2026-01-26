@@ -6,6 +6,10 @@ namespace Project
     public class PlayerStats
     {
         public float MaxSpeed = 2f;
+        public float Damage = 3.5f;
+        public float ShootSpeed = 1.5f;
+        public float Range = 6f;
+        public float AttackSpeed = 4f;
         
         public int Coins = 0;
         public int Bombs = 0;
